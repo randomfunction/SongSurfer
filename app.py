@@ -26,7 +26,7 @@ def find_top_similar_songs(target_song_name, tag_vectors, songs):
 
     target_song_index = target_song.index[0]
     target_song_vector = tag_vectors[target_song_index]
-    similarities = cosine_similarity(target_song_vector.reshape(1, -1), tag_vectors)
+    similarities = cosine_similarity(target_song_vector.reshape(1, -1), tag_vectors)[0]
     similarities = similarities.flatten()
     similarities[target_song_index] = -1
     top_10_indices = np.argsort(similarities)[::-1][:10]
