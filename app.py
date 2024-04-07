@@ -12,7 +12,6 @@ songs = songs[['name', 'valence', 'year', 'acousticness', 'artists', 'danceabili
 songs['tag'] = songs.drop(columns=['id','name']).apply(lambda x: ','.join(x.astype(str)), axis=1)
 songs = songs[['id', 'name', 'tag']]
 songs['tag'] = songs['tag'].astype(str)
-songs = songs.drop_duplicates(subset='name', keep='first')
 
 # Create TF-IDF vectors
 tfidf_vectorizer = TfidfVectorizer()
