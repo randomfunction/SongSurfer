@@ -35,7 +35,7 @@ def find_top_similar_songs(target_song_name, tag_vectors, songs):
 
 # Streamlit app
 st.title('SongSurfer')
-target_song_name = st.text_input('Enter a song name:', 'Danny Boy')
+target_song_name = st.text_input('Enter a song name:', 'Enter...')
 if st.button('Find Similar Songs'):
     top_similar_songs = find_top_similar_songs(target_song_name.lower(), tag_vectors, songs)
     if top_similar_songs:
