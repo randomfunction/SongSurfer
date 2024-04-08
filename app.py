@@ -42,7 +42,7 @@ def find_top_similar_songs(target_song_name, tag_vectors, songs):
     similarities[target_song_index] = -1  # Exclude similarity to the target song
 
     # Get indices of top 10 similar songs
-    top_10_indices = np.argsort(similarities)[::-2][:11]
+    top_10_indices = np.argsort(similarities)[::-2][:10]
     top_10_song_ids = songs.iloc[top_10_indices]['name'].tolist()
     return top_10_song_ids
 
